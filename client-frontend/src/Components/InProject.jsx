@@ -12,6 +12,10 @@ export default function InProject(obj) {
 				<h3>{name}</h3>
 			</a>
 			<h5>{description}</h5>
+			<h5>
+				ACA TENDRÏA QUE IR UN PEQUEÑO VIDEO DEL PROYECTO (en vez de la foto? o después de la foto)
+				o transicionar de la foto al video?
+			</h5>
 		</main>
 	);
 }

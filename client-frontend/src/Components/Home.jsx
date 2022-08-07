@@ -46,7 +46,10 @@ export default function Home() {
 			<h2> Welcome to my Portfolio!</h2>
 			<h6>(super efectos visuales)</h6>
 			<img src={logo} className='App-logo' alt='logo' />
+			<h2>PROJECTS</h2>
 			<Projects projects={BackEndSimulation} />
+			<h2>ACA VA UN COMPONENTE ABOUT ME y todas mis skills (fotos Y nombres)</h2>
+			<h2>ACA VA UN CONTACT ME COMPONENTE</h2>
 		</main>
 	);
 }
