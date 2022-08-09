@@ -1,7 +1,8 @@
-{
-    "compilerOptions": {
-      "baseUrl": "process.env.REACT_APP_API || 'http://localhost:3001'",
-      "checkJs": true,
-      "jsx": "react"
-    }
-  }
+/* {
+	"compilerOptions": {
+		"baseUrl": "process.env.REACT_APP_API || 'http://localhost:3001'",
+		"checkJs": true,
+		"jsx": "react"
+	}
+}
+ */

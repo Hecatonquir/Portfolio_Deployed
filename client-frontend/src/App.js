@@ -1,18 +1,35 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-
-import Home from './Components/Home';
-import LandingPage from './Components/Landing';
-import Notfound from './Components/Notfound';
+import React from "react";
+/* import { Route, Switch } from 'react-router-dom'; */
+import { About } from "./container/About/About";
+import { Footer } from "./container/Footer/Footer";
+import { Header } from "./container/Header/Header";
+import { Projects } from "./container/Projects/Projects";
+import { Skills } from "./container/Skills/Skills";
+import { Testimonial } from "./container/Testimonial/Testimonial";
+import { Navbar } from "./Components/Navbar/Navbar";
+import "./Styles/App.scss";
 
 export default function App() {
 	return (
-		<div className='App'>
-			<Switch>
+		<div className="app">
+			<Navbar />
+			<Header />
+			<Projects />
+			<About />
+			<Skills />
+			<Testimonial />
+			<Footer />
+		</div>
+	);
+}
+
+// eslint-disable-next-line no-lone-blocks
+{
+	/* <div className='App'> */
+	/* <Switch>
 				<Route exact path='/' component={LandingPage} />
 				<Route exact path='/home' component={Home} />
 				<Route component={Notfound} />
-			</Switch>
-		</div>
-	);
+			</Switch> */
+	/* </div> */
 }

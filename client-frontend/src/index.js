@@ -8,6 +8,7 @@ import App from './App';
 import './Styles/index.css';
 
 /* Configurations for Deploying This allows my front to communicate with Herokus BackEnd */
+
 import axios from 'axios';
 axios.defaults.baseURL = process.env.REACT_APP_VERCEL_URL || 'http://localhost:3001';
 
