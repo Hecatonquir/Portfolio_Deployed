@@ -15,7 +15,15 @@ const scaleVariants = {
 };
 
 export const Header = () => {
-	const skills = [images.flutter, images.redux, images.sass];
+	const skills = [
+		images.javascript6,
+		images.html,
+		images.react,
+		images.redux,
+		images.css,
+		images.postgresql,
+		images.express,
+	];
 	return (
 		<div className="app__header app__flex">
 			<motion.div
@@ -53,8 +61,8 @@ export const Header = () => {
 			</motion.div>
 
 			<motion.div variants={scaleVariants} whileInView={scaleVariants.whileInView} className="app__header-circles">
-				{skills.map((circle, index) => (
-					<div className="circle-cmp app__flex" key={`circle-${index}`}>
+				{skills.map((circle, i) => (
+					<div className="circle-cmp app__flex" key={`circle-${i}`}>
 						<img src={circle} alt="profile_bg" />
 					</div>
 				))}
