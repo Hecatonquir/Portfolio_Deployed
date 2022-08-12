@@ -8,7 +8,6 @@ import "./Testimonial.scss";
 
 const Testimonial = () => {
 	const [brands, setBrands] = useState([]);
-	console.log("🐲🐲🐲 / file: Testimonial.jsx / line 11 / brands", brands);
 	const [testimonials, seTestimonials] = useState([]);
 
 	const [currentIndex, setcurrentIndex] = useState(0);
