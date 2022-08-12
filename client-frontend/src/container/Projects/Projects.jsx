@@ -1,25 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
-import { AppWrap } from "../../wrapper";
+import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Projects.scss";
 
 const Projects = () => {
 	const [activeFilter, setActiveFilter] = useState("All");
 	const [animateCart, setAnimateCart] = useState({ y: 0, opacity: 1 });
-	const [projects, setProject] = useState([]);
-	const [filterProject, setFilterProject] = useState([]);
+	const [projects, setProjects] = useState([]);
+	const [filterProjects, setFilterProjects] = useState([]);
 	let appCategories = ["Single Page Application", "E-Commerce", "Small Apps", "All"];
 	useEffect(() => {
 		const query = '*[_type == "projects"]';
 		client.fetch(query).then((data) => {
-			setProject(data);
-			setFilterProject(data);
+			setProjects(data);
+			setFilterProjects(data);
 		});
 	}, []);
 
-	const handleProjectFilter = (item) => {};
+	const handleProjectFilter = (item) => {
+		setActiveFilter(item);
+		setAnimateCart([{ y: 100, opacity: 0 }]);
+		setTimeout(() => {
+			setAnimateCart([{ y: 0, opacity: 1 }]);
+			if (item === "All") setFilterProjects(projects);
+			else setFilterProjects(projects.filter((project) => project.tags.includes(item)));
+		}, 500);
+	};
 	return (
 		<>
 			<h2 className="head-text">
@@ -44,7 +52,7 @@ const Projects = () => {
 				animate={animateCart}
 				transition={{ duration: 0.5, delayChildren: 0.5 }}
 				className="app__project-portfolio">
-				{filterProject.map((project, i) => {
+				{filterProjects.map((project, i) => {
 					return (
 						<div className="app__project-item app__flex" key={i}>
 							<div className="app__project-img app__flex">
@@ -90,4 +98,5 @@ const Projects = () => {
 	);
 };
 
-export default AppWrap(Projects, "projects");
+/* export default AppWrap(Projects, "projects"); */
+export default AppWrap(MotionWrap(Projects, "app__project"), "projects", "app__whitebg");
