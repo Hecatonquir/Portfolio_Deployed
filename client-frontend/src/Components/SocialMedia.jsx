@@ -5,19 +5,18 @@ import { FaFacebookF } from "react-icons/fa";
 function SocialMedia() {
 	return (
 		<div className="app__social">
-			<div>
+			<a href="https://www.linkedin.com/in/maximilian-springer-a65396217/">
 				<BsLinkedin />
-			</div>
-			<div>
+			</a>
+			<a href="https://github.com/Hecatonquir">
 				<BsGithub />
-			</div>
-			<div>
+			</a>
+			{/* <a href="https://www.youtube.com/watch?v=3HNyXCPDQ7Q&ab_channel=JavaScriptMastery">
 				<BsWhatsapp />
-			</div>
-			<div>
+			</a>
+			<a href="https://www.youtube.com/watch?v=3HNyXCPDQ7Q&ab_channel=JavaScriptMastery">
 				<FaFacebookF />
-        <p></p>
-			</div>
+			</a> */}
 		</div>
 	);
 }

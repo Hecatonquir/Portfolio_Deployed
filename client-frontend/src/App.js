@@ -22,14 +22,3 @@ export default function App() {
 		</div>
 	);
 }
-
-// eslint-disable-next-line no-lone-blocks
-{
-	/* <div className='App'> */
-	/* <Switch>
-				<Route exact path='/' component={LandingPage} />
-				<Route exact path='/home' component={Home} />
-				<Route component={Notfound} />
-			</Switch> */
-	/* </div> */
-}
