@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { images } from "../../constants";
+import { AppWrap } from "../../wrapper";
 import "./Header.scss";
 
 const scaleVariants = {
@@ -14,7 +15,7 @@ const scaleVariants = {
 	},
 };
 
-export const Header = () => {
+const Header = () => {
 	const skills = [
 		images.javascript6,
 		images.html,
@@ -25,7 +26,7 @@ export const Header = () => {
 		images.express,
 	];
 	return (
-		<div id="home" className="app__header app__flex">
+		<div className="app__header app__flex">
 			<motion.div
 				whileInView={{ x: [-100, 0], opacity: [0, 1] }}
 				transition={{ duration: 1 }}
@@ -53,18 +54,14 @@ export const Header = () => {
 				<img src={images.profile} alt="profile_bg" />
 				<motion.img
 					whileInView={{ scale: [0, 1] }}
-					transition={{ duration: 4, ease: "easeInOut" }}
+					transition={{ duration: 1, ease: "easeInOut" }}
 					src={images.circle}
 					alt="profile_circle"
 					className="overlay_circle"
 				/>
 			</motion.div>
 
-			<motion.div
-				variants={scaleVariants}
-				whileInView={scaleVariants.whileInView}
-				className="app__header-circles"
-				transition={{ duration: 2, delayChildren: 2 }}>
+			<motion.div variants={scaleVariants} whileInView={scaleVariants.whileInView} className="app__header-circles">
 				{skills.map((circle, i) => (
 					<div className="circle-cmp app__flex" key={`circle-${i}`}>
 						<img src={circle} alt="profile_bg" />
@@ -74,3 +71,5 @@ export const Header = () => {
 		</div>
 	);
 };
+
+export default AppWrap(Header, "home");
