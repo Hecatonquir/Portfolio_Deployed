@@ -16,19 +16,23 @@ const Footer = () => {
 		setFormData({ ...formData, [name]: value });
 	};
 
-	const handleSumbit = () => {
+	const handleSubmit = () => {
 		setLoading(true);
+
 		const contact = {
-			_tyoe: "contact",
-			name: name,
-			email: email,
-			message: message,
+			_type: "contact",
+			name: formData.username,
+			email: formData.email,
+			message: formData.message,
 		};
 
-		client.create(contact).then(() => {
-			setLoading(false);
-			setIsFormSubmitted(true);
-		});
+		client
+			.create(contact)
+			.then(() => {
+				setLoading(false);
+				setIsFormSubmitted(true);
+			})
+			.catch((err) => console.log(err));
 	};
 
 	return (
@@ -79,7 +83,7 @@ const Footer = () => {
 							name="message"
 							onChange={handleInputChange}></textarea>
 					</div>
-					<button type="button" className="p-text" onClick={handleSumbit}>
+					<button type="button" className="p-text" onClick={handleSubmit}>
 						{loading ? "Sending..." : "Send Message"}
 					</button>
 				</div>
