@@ -5,7 +5,7 @@ import { FaFacebookF } from "react-icons/fa";
 function SocialMedia() {
 	return (
 		<div className="app__social">
-			<a href="https://www.linkedin.com/in/maximilian-springer-a65396217">
+			<a href="https://www.linkedin.com/in/SpringerMax-ElectricDeveloper">
 				<BsLinkedin />
 			</a>
 			<a href="https://github.com/Hecatonquir">
