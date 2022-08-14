@@ -3,6 +3,8 @@ import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
 import "./Footer.scss";
+import { BsWhatsapp } from "react-icons/bs";
+
 
 const Footer = () => {
 	const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -41,14 +43,14 @@ const Footer = () => {
 			<div className="app__footer-cards">
 				<div className="app__footer-card">
 					<img src={images.email} alt="email" />
-					<a href="mailto:maxicuentas92@hotmail.com" className="p-text">
-						&nbsp; maxicuentas92@hotmail.com
+					<a target="_blank" href="mailto:maxicuentas92@hotmail.com" className="p-text">
+						<span>&nbsp; Click to send me an E-mail!</span>
 					</a>
 				</div>
 				<div className="app__footer-card">
 					<img src={images.mobile} alt="mobile" />
-					<a href="tel:+54 9 (387) 413-5467" className="p-text">
-						+54 9 387 413 5467
+					<a target="_blank" href="https://wa.me/5493874135467" className="p-text">
+						<span> Click to chat with me!&nbsp;</span> <BsWhatsapp />
 					</a>
 				</div>
 			</div>
