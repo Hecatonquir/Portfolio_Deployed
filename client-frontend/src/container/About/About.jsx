@@ -6,6 +6,10 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 
 const About = () => {
 	const [abouts, setAbouts] = useState([]);
+	console.log(
+		"🐲🐲🐲 / file: About.jsx / line 9 / abouts",
+		abouts.sort((a, b) => a._updatedAt < b._updatedAt)
+	);
 
 	useEffect(() => {
 		const query = '*[_type == "abouts"]';
@@ -18,10 +22,14 @@ const About = () => {
 				About
 				<span> Me! </span>
 				<br />
-				<h6>
-					I really enjoy solving problmes, thats why I'm working as a junior full stack web Developer. Also, in my free
-					time I study to finish my degree in Electrical Engineer.
-				</h6>
+				<p className="p-text">
+					I'm an Electrical Engineer student, about to start my thesis. However, studying the market I found out that
+					working as Web Developer has a big potential. This made me curious, which led me to learn more about it and
+					ended up liking it. Also, it suits my personality and preferences since I'm an introvert and I really enjoy
+					solving problmes, thats why I decided to work as a full stack web Developer.
+					<br /> In my free time I like to learn more about the programming skills I already know, learn new programming
+					lengagues and study to finish my degree
+				</p>
 				<br />
 				My <span> Roles: </span>
 			</h2>
