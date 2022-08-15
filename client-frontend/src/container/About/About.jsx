@@ -15,10 +15,15 @@ const About = () => {
 	return (
 		<>
 			<h2 className="head-text">
-				I Believe That
-				<span> Good Apps </span>
+				About
+				<span> Me! </span>
 				<br />
-				Means <span>Good Business</span>
+				<h6>
+					I really enjoy solving problmes, thats why I'm working as a junior full stack web Developer. Also, in my free
+					time I study to finish my degree in Electrical Engineer.
+				</h6>
+				<br />
+				My <span> Roles: </span>
 			</h2>
 			<div className="app__profiles">
 				{abouts.map((about, i) => {
