@@ -6,10 +6,6 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 
 const About = () => {
 	const [abouts, setAbouts] = useState([]);
-	console.log(
-		"🐲🐲🐲 / file: About.jsx / line 9 / abouts",
-		abouts.sort((a, b) => a._updatedAt < b._updatedAt)
-	);
 
 	useEffect(() => {
 		const query = '*[_type == "abouts"]';
