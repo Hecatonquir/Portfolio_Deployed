@@ -1,6 +1,9 @@
 import React from "react";
 import { NavigationDots, SocialMedia } from "../Components";
 import { BiCopyright } from "react-icons/bi";
+
+
+
 const AppWrap = (Component, idName, classNames) =>
 	function HOC() {
 		return (

@@ -37,6 +37,7 @@ const Skills = () => {
 						</motion.div>
 					))}
 				</motion.div>
+				{/* HASTA ACA OK */}
 				<motion.div className='app__skills-exp'>
 					{experiences.map((exp, i) => (
 						<motion.div className='app__skills-exp-item' key={i}>
@@ -44,26 +45,29 @@ const Skills = () => {
 								<p className='bold-text'>{exp.year}</p>
 							</div>
 							<motion.div className='app__skills-exp-works'>
-								{exp.works.map((work, i) => (
-									<div key={i}>
-										<motion.div
-											whileInView={{ opacity: [0, 1] }}
-											transition={{ duration: 0.5 }}
-											className='app__skills-exp-work'
-											data-tip
-											data-for={work.name}>
-											<h4 className='bold-text'>{work.name}</h4>
-											<p className='p-text'>{work.company}</p>
-										</motion.div>
-										<ReactTooltip
-											id={work.name}
-											effect='solid'
-											arrowColor='#fff'
-											className='skills-tooltip'>
-											{work.description}
-										</ReactTooltip>
-									</div>
-								))}
+								{exp.works.map((work, i) => {
+									console.log('work:', work);
+									return (
+										<div key={i}>
+											<motion.div
+												whileInView={{ opacity: [0, 1] }}
+												transition={{ duration: 0.5 }}
+												className='app__skills-exp-work'
+												data-tip
+												data-for={work._key}>
+												<h4 className='bold-text'>{work.name}</h4>
+												<p className='p-text'>{work.company}</p>
+											</motion.div>
+											<ReactTooltip
+												id={work._key}
+												effect='solid'
+												arrowColor='#fff'
+												className='skills-tooltip'>
+												{work.description}
+											</ReactTooltip>
+										</div>
+									);
+								})}
 							</motion.div>
 						</motion.div>
 					))}
