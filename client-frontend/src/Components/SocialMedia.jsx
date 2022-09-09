@@ -29,7 +29,7 @@ function SocialMedia() {
 					times: [0, 0.2, 0.5, 0.8, 1],
 					repeat: Infinity,
 					repeatDelay: 15,
-					delay: 5,
+					delay: 10,
 				}}>
 				<a target='_blank' href='https://www.linkedin.com/in/SpringerMax-ElectricDeveloper'>
 					<BsLinkedin />
@@ -55,7 +55,7 @@ function SocialMedia() {
 					times: [0, 0.2, 0.5, 0.8, 1],
 					repeat: Infinity,
 					repeatDelay: 15,
-					delay: 10,
+					delay: 15,
 				}}>
 				<a target='_blank' href='https://github.com/Hecatonquir'>
 					<BsGithub />
@@ -80,7 +80,7 @@ function SocialMedia() {
 					times: [0, 0.2, 0.5, 0.8, 1],
 					repeat: Infinity,
 					repeatDelay: 15,
-					delay: 15,
+					delay: 20,
 				}}>
 				<a target='_blank' href='https://wa.me/5493874135467'>
 					<BsWhatsapp />

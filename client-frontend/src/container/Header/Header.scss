@@ -1,6 +1,6 @@
 #home {
 	position: relative;
-	background: url("../../assets/bgIMG.png");
+	background: url('../../assets/bgIMG.png');
 	background-size: cover;
 	background-position: center;
 	background-repeat: repeat;
@@ -61,6 +61,27 @@
 		flex-direction: row;
 		width: auto;
 		box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+		button {
+			padding: 1rem 2rem;
+			border-radius: 10px;
+			border: none;
+			background-color: var(--secondary-color);
+			font-weight: 500;
+			color: var(--white-color);
+			outline: none;
+			margin: 2rem 0 0 0;
+			font-family: var(--font-base);
+			cursor: pointer;
+
+			&:hover {
+				box-shadow: 0 0 25px #d8b9ff;
+			}
+		}
+		a {
+			color: var(--white-color);
+			text-decoration: none;
+		}
 	}
 
 	.tag-cmp {
