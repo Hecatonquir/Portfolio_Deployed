@@ -56,17 +56,20 @@ const Header = () => {
 					</div>
 					<div className='tag-cmp app__flex' style={{ zIndex: 50 }}>
 						<button type='button' className='p-text'>
-							<a href={require('../../assets/Springer-CV-Developer.pdf')} download='myFile'>
+							<a
+								href={require('../../assets/Springer-CV-Developer.pdf')}
+								download='Springer-CV-Developer.pdf'>
 								Download Resume
 							</a>
 						</button>
 						<br />
 						<button type='button' className='p-text'>
-							<a href={require('../../assets/SpringerMax-CV-Developer.pdf')} download='myFile'>
+							<a
+								href={require('../../assets/SpringerMax-CV-Developer.pdf')}
+								download='Springer-CV-Developer.pdf'>
 								Descargar CV
 							</a>
 						</button>
-
 					</div>
 				</div>
 			</motion.div>
