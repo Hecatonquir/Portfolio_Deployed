@@ -54,7 +54,7 @@ const Header = () => {
 						<p className='p-text'>Junior Full Stack Web Developer</p>
 						<p className='p-text'>Electrical Engineering Student</p>
 					</div>
-					<div className='tag-cmp app__flex' style={{ zIndex: 50 }}>
+					<div className='tag-cmp app__flex' style={{ zIndex: 1 }}>
 						<button type='button' className='p-text'>
 							<a
 								href={require('../../assets/Springer-CV-Developer.pdf')}
@@ -93,9 +93,20 @@ const Header = () => {
 				whileInView={scaleVariants.whileInView}
 				className='app__header-circles'>
 				{skills.map((circle, i) => (
-					<div className='circle-cmp app__flex' key={`circle-${i}`}>
+					<motion.div
+						className='circle-cmp app__flex'
+						key={`circle-${i}`}
+						drag
+						dragConstraints={{
+							top: -50,
+							left: -50,
+							right: 50,
+							bottom: 50,
+						}}
+						whileHover={{ scale: 1.1 }}
+						whileTap={{ scale: 0.9 }}>
 						<img src={circle} alt='profile_bg' />
-					</div>
+					</motion.div>
 				))}
 			</motion.div>
 		</div>

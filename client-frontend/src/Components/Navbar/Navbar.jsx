@@ -6,7 +6,7 @@ import { images } from "../../constants";
 import "./Navbar.scss";
 
 const Navbar = () => {
-	const menu = ["home", "projects", "about", "skills", /* "testimonials" */, "contact"];
+	const menu = ["home", "projects", "about", "skills", "testimonials", "contact"];
 	const [toggle, setToggle] = useState(false);
 
 	return (
@@ -28,7 +28,7 @@ const Navbar = () => {
 			<div className="app__navbar-menu">
 				<HiMenuAlt4 onClick={() => setToggle(true)} />
 				{toggle && (
-					<motion.div whileInView={{ x: [300, 0] }} transition={{ duration: 0.85, ease: "easeOut" }}>
+					<motion.div whileInView={{ x: [500, 0] }} transition={{ duration: 1, ease: "easeOut" }}>
 						<HiX onClick={() => setToggle(false)} />
 						<ul>
 							{menu.map((item, i) => {
