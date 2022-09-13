@@ -41,7 +41,9 @@ const Header = () => {
 								transition: { type: 'spring', repeat: Infinity, repeatType: 'mirror', duration: 1 },
 							}}
 							onMouseEnter={() => 1}>
-							<span>👋</span>
+							<span>
+								<img src='https://raw.githubusercontent.com/parth-27/parth-27/master/Hi.gif' alt='hi' />
+							</span>
 						</motion.div>
 
 						<div style={{ marginLeft: 20 }}>
@@ -66,7 +68,7 @@ const Header = () => {
 						<button type='button' className='p-text'>
 							<a
 								href={require('../../assets/SpringerMax-CV-Developer.pdf')}
-								download='Springer-CV-Developer.pdf'>
+								download='SpringerMax-CV-Developer.pdf'>
 								Descargar CV
 							</a>
 						</button>
