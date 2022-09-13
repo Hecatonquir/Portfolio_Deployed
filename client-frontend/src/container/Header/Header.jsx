@@ -42,7 +42,12 @@ const Header = () => {
 							}}
 							onMouseEnter={() => 1}>
 							<span>
-								<img src='https://raw.githubusercontent.com/parth-27/parth-27/master/Hi.gif' alt='hi' />
+								<img
+									src='https://raw.githubusercontent.com/parth-27/parth-27/master/Hi.gif'
+									alt='hi'
+									width='100rem'
+									marginRight='100rem'
+								/>
 							</span>
 						</motion.div>
 
