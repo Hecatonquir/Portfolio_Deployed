@@ -46,7 +46,6 @@ const Skills = () => {
 							</div>
 							<motion.div className='app__skills-exp-works'>
 								{exp.works.map((work, i) => {
-									console.log('work:', work);
 									return (
 										<div key={i}>
 											<motion.div

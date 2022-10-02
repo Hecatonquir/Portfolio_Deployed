@@ -93,7 +93,8 @@ const Projects = () => {
 									{project.description}
 								</p>
 								<div className='app__project-tag app__flex'>
-									<p className='p-text'>{project.tags[0]}</p>
+									{/* {console.log('project:', project)} */}
+									<p className='p-text'>{project.tags && project.tags[0]}</p>
 								</div>
 							</div>
 						</motion.div>
