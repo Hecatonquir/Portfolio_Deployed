@@ -11,6 +11,7 @@ const Projects = () => {
 	const [projects, setProjects] = useState([]);
 	const [filterProjects, setFilterProjects] = useState([]);
 	let appCategories = ['Single Page Application', 'E-Commerce', 'Small Apps', 'All'];
+
 	useEffect(() => {
 		const query = '*[_type == "projects"]';
 		client.fetch(query).then((data) => {
@@ -28,6 +29,35 @@ const Projects = () => {
 			else setFilterProjects(projects.filter((project) => project.tags.includes(item)));
 		}, 500);
 	};
+
+	const div1Variants = {
+		start: {},
+		end: {
+			/* boxShadow: '0px 10px 10px #00ffaa', */
+		},
+		whileInView: {
+			transition: {
+				delayChildren: 0.5,
+				staggerChildren: 0.6,
+				staggerDirection: 1, //de adelante para atras
+				when: 'beforeChildren',
+			},
+		},
+	};
+	const child1Variants = {
+		start: { opacity: 0 },
+		end: {},
+		whileInView: {
+			x: [-300, 0],
+			/* 			boxShadow: ['0px 10px 10px #2600ff', '0px 0px 0px #ffffff'],
+			 */ opacity: [0, 1],
+			transition: {
+				duration: 0.3,
+				//delay: 0.5,
+			},
+		},
+	};
+
 	return (
 		<>
 			<h2 className='head-text'>
@@ -51,41 +81,34 @@ const Projects = () => {
 				})}
 			</div>
 			<motion.div
-				animate={animateCart}
-				transition={{ duration: 0.5, delayChildren: 0.5 }}
+				variants={div1Variants}
+				initial='start'
+				animate='end'
+				whileInView='whileInView'
 				className='app__project-portfolio'>
 				{filterProjects.map((project, i) => {
 					return (
 						<motion.div
 							className='app__project-item app__flex'
 							key={i}
-							whileInView={{ x: [-200, -100, 0], opacity: [0, 0.4, 1] }}
-							transition={{ duration: 0.2 }}>
+							variants={child1Variants}
+							/* initial='start'
+							animate='end' */
+							whileInView='whileInView'>
 							<div className='app__project-img app__flex'>
 								<img src={urlFor(project.imgUrl)} alt={project.name} />
-								<motion.div
-									whileHover={{ opacity: [0, 1] }}
-									transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
-									className={'app__project-hover app__flex'}>
+								<div className={'app__project-hover app__flex'}>
 									<a href={project.projectLink} target='_blank' rel='noreferrer'>
-										<motion.div
-											whileInView={{ scale: [0, 1] }}
-											whileHover={{ scale: [1, 0.9] }}
-											transition={{ duration: 0.25 }}
-											className={'app__flex'}>
+										<div className={'app__flex'}>
 											<AiFillEye />
-										</motion.div>
+										</div>
 									</a>
 									<a href={project.codeLink} target='_blank' rel='noreferrer'>
-										<motion.div
-											whileInView={{ scale: [0, 1] }}
-											whileHover={{ scale: [1, 0.9] }}
-											transition={{ duration: 0.25 }}
-											className={'app__flex'}>
+										<motion.div className={'app__flex'}>
 											<AiFillGithub />
 										</motion.div>
 									</a>
-								</motion.div>
+								</div>
 							</div>
 							<div className='app__project-content app__flex'>
 								<h4 className='bold-text'>{project.title}</h4>
@@ -93,7 +116,6 @@ const Projects = () => {
 									{project.description}
 								</p>
 								<div className='app__project-tag app__flex'>
-									{/* {console.log('project:', project)} */}
 									<p className='p-text'>{project.tags && project.tags[0]}</p>
 								</div>
 							</div>

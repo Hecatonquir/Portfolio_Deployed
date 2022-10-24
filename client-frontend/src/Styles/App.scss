@@ -1,6 +1,8 @@
-.app {
+div.app {
+	position: relative;
 	background-color: var(--primary-color);
 	font-family: var(--font-base);
+	overflow: hidden;
 }
 
 .app__whitebg {
@@ -14,7 +16,7 @@
 .app__container {
 	width: 100%;
 	min-height: 100vh;
-
+	padding-top: 1.1rem;
 	display: flex;
 	flex-direction: row;
 }

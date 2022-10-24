@@ -1,96 +1,61 @@
 import React from 'react';
 import { BsLinkedin, BsGithub, BsWhatsapp } from 'react-icons/bs';
-import { FaFacebookF } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-/* 
- animate={{ rotate: 360 }}
-                transition={{ ease: "linear", duration: 2, repeat: Infinity }}
-*/
+
+const div1Variants = {
+	whileInView: {
+		end: {},
+		transition: {
+			delayChildren: 1,
+			staggerChildren: 15,
+		},
+	},
+};
+const child1Variants = {
+	whileInView: {
+		scale: [1, 2, 0, 2, 1],
+
+		boxShadow: [
+			'0px 0px 5px rgba(0,0,0,0)',
+			'10px 10px 5px rgb(255, 0, 170)',
+			'-20px -20px 10px rgb(0, 149, 255)',
+			'10px 10px 5px rgb(255, 0, 170)',
+			'0px 0px 0px rgba(0, 106, 255, 0)',
+		],
+		transition: {
+			duration: 5,
+			ease: 'easeInOut',
+			times: [0, 0.2, 0.5, 0.7, 1],
+			repeat: Infinity,
+			repeatDelay: 45,
+		},
+	},
+};
 
 function SocialMedia() {
 	return (
-		<div className='app__social'>
-			<motion.div
-				style={{ borderRadius: '50%' }}
-				animate={{
-					scale: [1, 2, 1, 2, 1],
-					rotate: [0, 0, 360, 360, 0],
-					backgroundColor: [
-						'rgba(0,0,0,0)',
-						'rgba(49, 59, 172,1)',
-						'rgba(0,0,0,0)',
-						'rgba(49, 59, 172,1)',
-						'rgba(0,0,0,0)',
-					],
-				}}
-				transition={{
-					duration: 2,
-					ease: 'easeInOut',
-					times: [0, 0.2, 0.5, 0.8, 1],
-					repeat: Infinity,
-					repeatDelay: 15,
-					delay: 10,
-				}}>
-				<a target='_blank' href='https://www.linkedin.com/in/SpringerMax-ElectricDeveloper'>
-					<BsLinkedin />
-				</a>
-			</motion.div>
-			<motion.div
-				style={{ borderRadius: '50%' }}
-				animate={{
-					scale: [1, 2, 1, 2, 1],
-					rotate: [0, 0, 360, 360, 0],
+		<motion.div
+			className='app__social'
+			variants={div1Variants}
+			initial='start'
+			animate='end'
+			whileInView='whileInView'
+			transitions={{ delay: 1.5, duration: 1.5 }}>
+			<motion.a
+				target='_blank'
+				variants={child1Variants}
+				href='https://www.linkedin.com/in/SpringerMax-ElectricDeveloper'>
+				<BsLinkedin />
+			</motion.a>
 
-					backgroundColor: [
-						'rgba(0,0,0,0)',
-						'rgba(49, 59, 172,1)',
-						'rgba(0,0,0,0)',
-						'rgba(49, 59, 172,1)',
-						'rgba(0,0,0,0)',
-					],
-				}}
-				transition={{
-					duration: 2,
-					ease: 'easeInOut',
-					times: [0, 0.2, 0.5, 0.8, 1],
-					repeat: Infinity,
-					repeatDelay: 15,
-					delay: 15,
-				}}>
-				<a target='_blank' href='https://github.com/Hecatonquir'>
-					<BsGithub />
-				</a>
-			</motion.div>
-			<motion.div
-				style={{ borderRadius: '50%' }}
-				animate={{
-					scale: [1, 2, 1, 2, 1],
-					rotate: [0, 0, 360, 360, 0],
-					backgroundColor: [
-						'rgba(0,0,0,0)',
-						'rgba(49, 59, 172,1)',
-						'rgba(0,0,0,0)',
-						'rgba(49, 59, 172,1)',
-						'rgba(0,0,0,0)',
-					],
-				}}
-				transition={{
-					duration: 2,
-					ease: 'easeInOut',
-					times: [0, 0.2, 0.5, 0.8, 1],
-					repeat: Infinity,
-					repeatDelay: 15,
-					delay: 20,
-				}}>
-				<a target='_blank' href='https://wa.me/5493874135467'>
-					<BsWhatsapp />
-				</a>
-			</motion.div>
+			<motion.a target='_blank' href='https://github.com/Hecatonquir' variants={child1Variants}>
+				<BsGithub />
+			</motion.a>
 
-			{/*<a href="https://www.youtube.com/watch?v=3HNyXCPDQ7Q&ab_channel=JavaScriptMastery">
-				<FaFacebookF />
-			</a> */}
-		</div>
+			<motion.a target='_blank' href='https://wa.me/5493874135467' variants={child1Variants}>
+				<BsWhatsapp />
+			</motion.a>
+		</motion.div>
 	);
 }
 
