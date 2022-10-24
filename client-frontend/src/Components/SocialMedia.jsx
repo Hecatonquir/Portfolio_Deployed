@@ -44,7 +44,7 @@ function SocialMedia() {
 			<motion.a
 				target='_blank'
 				variants={child1Variants}
-				href='https://www.linkedin.com/in/SpringerMax-ElectricDeveloper'>
+				href='https://www.linkedin.com/in/springer-max/'>
 				<BsLinkedin />
 			</motion.a>
 
