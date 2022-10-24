@@ -111,8 +111,8 @@ const Header = () => {
 							className='p-text'
 							whileTap={{ scale: 0.9, boxShadow: '0px 0px 100px rgb(204,255,229)' }}>
 							<a
-								href={require('../../assets/SpringerMax-CV-Developer.pdf')}
-								download='SpringerMax-CV-Developer.pdf'>
+								href={require('../../assets/Springer-CV-Desarrollador.pdf')}
+								download='Springer-CV-Desarrollador.pdf'>
 								Descargar CV
 							</a>
 						</motion.button>
