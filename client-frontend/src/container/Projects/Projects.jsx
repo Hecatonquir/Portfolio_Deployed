@@ -97,18 +97,29 @@ const Projects = () => {
 							whileInView='whileInView'>
 							<div className='app__project-img app__flex'>
 								<img src={urlFor(project.imgUrl)} alt={project.name} />
-								<div className={'app__project-hover app__flex'}>
+								<motion.div
+									whileHover={{ opacity: [0, 1] }}
+									transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
+									className={'app__project-hover app__flex'}>
 									<a href={project.projectLink} target='_blank' rel='noreferrer'>
-										<div className={'app__flex'}>
+										<motion.div
+											whileInView={{ scale: [0.8, 1] }}
+											whileHover={{ scale: [1, 0.8] }}
+											transition={{ duration: 0.25 }}
+											className={'app__flex'}>
 											<AiFillEye />
-										</div>
+										</motion.div>
 									</a>
 									<a href={project.codeLink} target='_blank' rel='noreferrer'>
-										<motion.div className={'app__flex'}>
+										<motion.div
+											whileInView={{ scale: [0.8, 1] }}
+											whileHover={{ scale: [1, 0.8] }}
+											transition={{ duration: 0.25 }}
+											className={'app__flex'}>
 											<AiFillGithub />
 										</motion.div>
 									</a>
-								</div>
+								</motion.div>
 							</div>
 							<div className='app__project-content app__flex'>
 								<h4 className='bold-text'>{project.title}</h4>
